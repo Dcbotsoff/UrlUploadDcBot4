@@ -40,12 +40,12 @@ def line_number(fileName, e):
 #Checking User whether he joined channel and group or not joined.
 async def search_user_in_community(bot, update):
     try:
-        await bot.get_chat_member('@AJPyroVerse', update.chat.id)
-        await bot.get_chat_member('@AJPyroVerseGroup', update.chat.id)
+        await bot.get_chat_member('@groupdcbots', update.chat.id)
+        await bot.get_chat_member('@groupdc', update.chat.id)
     except UserNotParticipant:
         await update.reply_text(BotMessage.not_joined_community, parse_mode = 'html',reply_markup=InlineKeyboardMarkup([
-        [InlineKeyboardButton('Join our Channel.',url = 'https://t.me/AJPyroVerse')],
-        [InlineKeyboardButton('Join our Group.',url = 'https://t.me/AJPyroVerseGroup')]
+        [InlineKeyboardButton('Join our Channel.',url = 'https://t.me/groupdcbots')],
+        [InlineKeyboardButton('Join our Group.',url = 'https://t.me/groupdc')]
         ]))
         return
     except exceptions.bad_request_400.ChatAdminRequired:
